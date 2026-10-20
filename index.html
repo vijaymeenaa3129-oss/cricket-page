@@ -81,25 +81,19 @@
         Redirecting to Telegram in <span id="countdown">15</span> seconds...
     </div>
 
-    <a href="tg://join?invite=bwdg8SbCgnw4MjY1" id="tg-btn" class="btn">👉 CLICK HERE TO JOIN FREE TELEGRAM</a>
+    <!-- 100% Fixed Official Link -->
+    <a href="https://t.me" id="tg-btn" class="btn">👉 CLICK HERE TO JOIN FREE TELEGRAM</a>
 </div>
 
 <script>
-    const telegramAppLink = "tg://join?invite=bwdg8SbCgnw4MjY1";
-    const telegramWebLink = "https://t.me"; 
-    
-    function redirectToTelegram() {
-        window.location.href = telegramAppLink;
-        setTimeout(function() {
-            window.location.href = telegramWebLink;
-        }, 1200);
-    }
+    // Standard Official Link Setup
+    const telegramLink = "https://t.me"; 
     
     let timeleft = 15;
     const downloadTimer = setInterval(function(){
         if(timeleft <= 0){
             clearInterval(downloadTimer);
-            redirectToTelegram();
+            window.location.href = telegramLink;
         } else {
             document.getElementById("countdown").innerHTML = timeleft;
         }
@@ -108,7 +102,7 @@
 
     document.getElementById("tg-btn").addEventListener("click", function(e) {
         e.preventDefault();
-        redirectToTelegram();
+        window.location.href = telegramLink;
     });
 </script>
 
