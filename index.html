@@ -63,6 +63,7 @@
             border-radius: 50px;
             box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4);
             transition: 0.3s;
+            cursor: pointer;
         }
         .btn:hover {
             transform: scale(1.02);
@@ -74,25 +75,30 @@
 
 <div class="container">
     <div class="logo-area">🏏🎾</div>
-    <h1>Cricket & Tennis Analysis Hub</h1>
+    <h1>☬ 𝐂𝐑𝐈𝐂𝐊𝐄𝐓 & 𝐓𝐄𝐍𝐍𝐈𝐒 𝐏𝐑𝐄𝐃𝐈𝐂𝐓𝐈𝐎𝐍 ☬</h1>
     <p>Get Daily Free Match Previews, Pitch Reports, Weather Updates, and Expert Analytics. Join India's Fastest Growing Sports Family!</p>
     
-    <div class="timer-box">
-        Redirecting to Telegram in <span id="countdown">15</span> seconds...
+    <div class="timer-box" id="timer-text">
+        Verifying Server Connection... <span id="countdown">5</span>s
     </div>
 
-    <!-- 100% Fixed Official Link -->
-    <a href="https://t.me" id="tg-btn" class="btn">👉 CLICK HERE TO JOIN FREE TELEGRAM</a>
+    <!-- Active New Link Installed -->
+    <a href="https://t.me/+sw8Jq18n2VUwZTQ1" id="tg-btn" class="btn" style="display:none;">👉 CLICK HERE TO JOIN FREE TELEGRAM</a>
 </div>
 
 <script>
-    // Standard Official Link Setup
-    const telegramLink = "https://t.me"; 
+    const telegramLink = "https://t.me/+sw8Jq18n2VUwZTQ1"; 
     
-    let timeleft = 15;
+    let timeleft = 5; 
     const downloadTimer = setInterval(function(){
         if(timeleft <= 0){
             clearInterval(downloadTimer);
+            document.getElementById("timer-text").innerHTML = "✅ Server Status: Secure Connection!";
+            document.getElementById("timer-text").style.background = "linear-gradient(90deg, #00c853, #b2ff59)";
+            document.getElementById("timer-text").style.color = "#000";
+            document.getElementById("tg-btn").style.display = "block";
+            
+            // Automatic click attempt to open app instantly
             window.location.href = telegramLink;
         } else {
             document.getElementById("countdown").innerHTML = timeleft;
@@ -101,7 +107,6 @@
     }, 1000);
 
     document.getElementById("tg-btn").addEventListener("click", function(e) {
-        e.preventDefault();
         window.location.href = telegramLink;
     });
 </script>
